@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+	<html lang="pl">
+		<head>
+			<title>Witaj</title>
+			<meta charset="UTF-8">
+		    <meta name="author" content="Anna Rubin" />
+		    <meta name="keywords" content="life"/>
+		    <meta name="description" content="Strona jest dedykowana przedmiotowi techniki internetowe"/>
+		    <link href="./images/eye.ico" rel="icon" type="image/x-icon"/>
+		    <link href="./styles/styles.css" rel="stylesheet" type="text/css"/>
+		    <link href="./CSS/all.css" rel="stylesheet"/> 
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		    <script>
+		    	$(document).ready(function(){
+		    		//jak to zrobic, ale nie migało przy załadowywaniu strony
+		    		if ($(window).width() <= 600) {$(".side-menu").hide();}
+		    		else {$(".nav-top").hide();}
+		    		$(window).resize(function() {
+		    			if ($(window).width() <= 600) {
+                            $(".side-menu").hide();
+                            $(".nav-top").show();
+                        }
+                        if ($(window).width() > 600) {
+                            $(".side-menu").show();
+                            $(".nav-top").hide();
+                        }   
+                    });
+                });
+		    	$(document).ready(function(){
+                  $("#in").click(function(){
+                    $(this).hide();
+                  });
+                });
+                $(document).ready(function(){
+				  $("#out").click(function(){
+				    $("#in").slideToggle("slow");
+				  });
+				});
+
+				$(document).ready(function(){
+			      $("p").on('mouseenter', () => {
+			          $("p").css({ "font-weight":"bold" });
+			       });
+			    });
+			    $(document).ready(function() {
+					$(window).scroll(function(){
+					if ($(this).scrollTop() > 800) { 
+					$('#scroll-top').fadeIn(); 
+					} else { 
+					$('#scroll-top').fadeOut(); } 
+					});
+					$('#scroll-top').click(function(){
+					$("html, body").animate({ scrollTop: 0 }, 500);
+					return false;
+					});
+				});
+				$(document).ready(function() { 
+                   $('a[href^="#"]').on('click', function(event) {
+	                 var target = $( $(this).attr('href') );
+	                    if( target.length ) {
+	                       event.preventDefault();  //wyłączamy domyślne działanie odnośnika, przeskok
+			               $('html, body').animate({
+				             scrollTop: target.offset().top -100
+			                }, 1000);
+		                }
+	                });
+                });
+	    </script>
+		</head>
+		<body style="margin: 0px">
+			<header>
+				<div class="logo">
+					<a><img src="https://cdn.pixabay.com/photo/2014/12/22/00/07/tree-576847_960_720.png" alt="Drzewo" /></a>
+					<h1>Strona internetowa</h1>
+				</div>
+				<nav class="nav-top">
+					<a class="opcja1" href="#sekcja1">Sekcja 1</a>
+					<a class="opcja1" href="#sekcja2">Sekcja 2</a>
+					<a class="opcja1" href="#sekcja3">Sekcja 3</a>
+					<a class="opcja1" href="#sekcja4">Sekcja 4</a>
+					<!--odnosniki href i?-->
+					<a class="opcja2" href="#sekcja1"><i class="fa-solid fa-cloud-showers-heavy"></i></a>
+					<a class="opcja2" href="#sekcja2"><i class="fa-solid fa-seedling"></i></a>
+					<a class="opcja2" href="#sekcja3"><i class="fa-solid fa-snowflake"></i></a>
+					<a class="opcja2" href="#sekcja4"><i class="fa-solid fa-person-falling"></i></a>
+				</nav>
+			</header>
+			<div class="side-menu-container">
+      			<nav class="side-menu">
+        			<a class="toSec1" href="#sekcja1">
+        				<div><i class="fas fa-home"></i></div>
+        			</a>
+        			<a class="toSec2" href="#sekcja2">
+        				<div><i class="fas fa-question"></i></div>
+        			</a>
+       			    <a class="toSec3" href="#sekcja3">
+       					<div><i class="fas fa-briefcase"></i></div>
+      				</a>
+        			<a class="toSec4" href="#sekcja4">
+        				<div><i class="fas fa-address-card"></i></div>
+        			</a>
+     		    </nav>
+   		    </div>
+   		    <div class="landing-page">
+                <img src="https://cdn.pixabay.com/photo/2017/12/23/17/54/hand-3035665_960_720.jpg" alt="Przywitalne zdjęcie"/>
+ 			</div>
+   		    <div class="container-main">
+      			<div class="container" id="sekcja1">
+      				<a href="#" id="scroll-top"></a>
+      			    <img src="https://cdn.pixabay.com/photo/2017/02/15/07/45/text-2067823_960_720.jpg" alt="Starożytny język"/>
+      			    <!--podpis zdj-->
+       			    <br/>
+       				<a href="https://pixabay.com/pl/">Link do strony zdjęcia</a>
+      			    <hr>
+     		    </div>
+		        <div class="container" id="sekcja2">
+    			    <h2>Wykorzystanie materiałów</h2>
+     			    <p>Kolejne zdjęcie</p>
+                    <img src="https://cdn.pixabay.com/photo/2015/01/15/16/17/hands-600497_960_720.jpg" alt="Mapa konktynentów"/>
+       				<br/>
+     			    <a href="https://pixabay.com/pl/">Link do strony zdjęcia</a>
+      			    <hr>
+                </div>
+      			<div class="container" id="sekcja3">
+      			    <p>
+				        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat aliquam
+				        dolore nemo sed maiores totam dicta dolores in aliquid modi alias
+				        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus ultricies nisi at sagittis. Curabitur tristique sapien ex, a ornare sem maximus et. Praesent consequat ligula ipsum, ac vehicula nunc finibus a. Ut ut sagittis erat, sit amet elementum leo. Proin at bibendum massa, ac ultrices enim. In at lacus a nibh egestas volutpat ut eget velit. Nulla varius libero ut turpis tempus fermentum. Cras in sem nulla. Phasellus mattis interdum vehicula. Proin tristique tempus ultrices. Nulla lectus dui, cursus nec est nec, venenatis euismod ipsum. Cras ex ipsum, euismod in leo 
+        			<br/>
+        			<!--To jest nowa linia w tekscie-->
+        				tutaj nowa linia w tekscie
+        			<br/>
+				        sit amet, viverra mattis nisi. Quisque neque nulla, vestibulum id tempus at, feugiat eget metus. Donec vitae molestie dui. Fusce eu mollis sapien. Mauris lorem sapien, cursus nec facilisis nec, semper euismod dolor.
+				    </p>
+			        <hr>
+     		    </div>
+			    <div class="container" id="sekcja4">
+
+			    	<div id="out">Click to slide the panel down or up</div>
+                    <div id="in">Hello world!</div>
+
+			        <h3>Lista</h3>
+			        <div id="lista">
+			        <!--Lista nieniumerowana-->
+			        <div id="nienumerowana">
+			        <ul>
+			         	<li>Element 1</li>
+			         	<li>Element 2</li>
+			         	<li>Element 3</li>
+			        </ul>
+			        </div>
+			        <div id="numerowana">
+			        <!--Lista numerowana-->
+			        <ol>
+				        <li>Element 1</li>
+				        <li>Element 2</li>
+				        <li>Element 3</li>
+			        </ol>
+			        </div>
+			        </div>
+			        <h3>Tabela</h3>
+			        <div id="tabela">
+			        <!--Tabela-->
+			        <table>
+				        <thead>
+				        	<tr>
+				           		<td>Kol1</td>
+				           		<td>Kol2</td>
+				          	</tr>
+				        </thead>
+				        <tbody>
+				          	<tr>
+				           		<td>el1</td>
+				           		<td>el2</td>
+				          	</tr>
+				          	<tr>
+				            	<td>el3</td>
+				            	<td>el4</td>
+				          	</tr>
+				        </tbody>
+			        </table>
+			        </div>
+			        <!--To jest linia pionowa-->
+			        <hr>
+			    </div>
+			</div>
+   		    <footer>
+        		<p>© [2022] [Anna] [Rubin] </p>
+        		<div id="zegar"></div>
+                <script src="zegar.js"></script>
+    		</footer>
+		</body>
+	</html>
